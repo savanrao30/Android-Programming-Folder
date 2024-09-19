@@ -1,0 +1,3 @@
+Develop a notepad app with custom keypad:
+•	Top fragment: display the note entered
+•	Bottom fragment: display several rows of letters, numbers, and symbols (each as a button) for text input; when a user pushes a button, the corresponding input is appended in the top fragment.
