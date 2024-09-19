@@ -1,42 +1,46 @@
-package com.jfdimarzio.hw3by2784780;
+package com.jfdimarzio.hw3by2784780
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
+import android.os.Bundle
 
-import android.os.Bundle;
+class MainActivity : AppCompatActivity(), BottomFragment.OnGreenFragmentListener {
 
-public class MainActivity extends AppCompatActivity implements BottomFragment.OnGreenFragmentListener {
+    companion object {
+        private const val BLUE_TAG = "blue"
+        private const val GREEN_TAG = "green"
+    }
 
-    private static final String BLUE_TAG = "blue";
-    private static final String GREEN_TAG = "green";
-    TopFragment mBlueFragment;
-    BottomFragment mGreenFragment;
+    private var mBlueFragment: TopFragment? = null
+    private var mGreenFragment: BottomFragment? = null
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-        // add fragments
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        // Add fragments
+        val fragmentManager = supportFragmentManager
 
-        mBlueFragment = (TopFragment) fragmentManager.findFragmentByTag(BLUE_TAG);
+        mBlueFragment = fragmentManager.findFragmentByTag(BLUE_TAG) as? TopFragment
         if (mBlueFragment == null) {
-            mBlueFragment = new TopFragment();
-            fragmentManager.beginTransaction().add(R.id.blue_fragment_container, mBlueFragment, BLUE_TAG).commit();
+            mBlueFragment = TopFragment()
+            fragmentManager.beginTransaction()
+                .add(R.id.blue_fragment_container, mBlueFragment!!, BLUE_TAG)
+                .commit()
         }
 
-        mGreenFragment = (BottomFragment) fragmentManager.findFragmentByTag(GREEN_TAG);
+        mGreenFragment = fragmentManager.findFragmentByTag(GREEN_TAG) as? BottomFragment
         if (mGreenFragment == null) {
-            mGreenFragment = new BottomFragment();
-            fragmentManager.beginTransaction().add(R.id.green_fragment_container, mGreenFragment, GREEN_TAG).commit();
+            mGreenFragment = BottomFragment()
+            fragmentManager.beginTransaction()
+                .add(R.id.green_fragment_container, mGreenFragment!!, GREEN_TAG)
+                .commit()
         }
     }
 
     // The Activity handles receiving a message from one Fragment
     // and passing it on to the other Fragment
-    @Override
-    public void messageFromGreenFragment(String message) {
-        mBlueFragment.youveGotMail(message);
+    override fun messageFromGreenFragment(message: String) {
+        mBlueFragment?.youveGotMail(message)
     }
 }
