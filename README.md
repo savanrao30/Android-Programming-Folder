@@ -7,3 +7,7 @@
 •	On clicking” Add Contact” button in the main activity, it goes to the second activity, where the user could add the contact information such as name, phone number, email, etc.
 •	After entering a new contact, the user could click the submit button in the second activity, which the second activity will be closed, and the app goes back to the main activity
 •	The main activity now should display the new contact information.
+
+3. Develop a notepad app with custom keypad:
+•	Top fragment: display the note entered
+•	Bottom fragment: display several rows of letters, numbers, and symbols (each as a button) for text input; when a user pushes a button, the corresponding input is appended in the top fragment.
