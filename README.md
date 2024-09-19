@@ -12,7 +12,7 @@
 •	Top fragment: display the note entered
 •	Bottom fragment: display several rows of letters, numbers, and symbols (each as a button) for text input; when a user pushes a button, the corresponding input is appended in the top fragment.
 
-4.Create an app that showcases different types of layouts: Java & Kotlin
+4. Create an app that showcases different types of layouts: Java & Kotlin
 •	In the main activity, add three buttons
 •	Button-1: on click, it will start another activity with a linear layout as shown
 •	Button-2: on click, it will start another activity with a table layout as shown
