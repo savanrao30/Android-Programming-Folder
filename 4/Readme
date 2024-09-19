@@ -1,0 +1,5 @@
+Create an app that showcases different types of layouts:
+•	In the main activity, add three buttons
+•	Button-1: on click, it should start another activity with a linear layout as shown
+•	Button-2: on click, it should start another activity with a table layout as shown
+•	Button-3: on click, it should start another activity with a relative layout as shown.
